@@ -10,3 +10,6 @@ http://qiita.com/odacoh/items/b94be0deecaaa27b0263
 
 - 自動起動のコマンド  
 chkconfig
+
+- CentOSでのipconfig
+`ip addr show`
