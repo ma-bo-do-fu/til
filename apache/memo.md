@@ -13,7 +13,7 @@ Starting httpd (via systemctl):  Job for httpd.service failed because the contro
 
 # マルチドメインの設定
 - httpd.confのNameVirtualHost *:80を有効化する  
-- VirtualHostの設定を追記していく  
+- VirtualHostの設定を追記していく  
 例)  
 ```
 <VirtualHost *:80>
