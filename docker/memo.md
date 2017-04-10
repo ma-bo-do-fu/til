@@ -1,3 +1,5 @@
+### レジストリとリポジトリのイメージ
+
 - レジストリ(DockerHub)
     - リポジトリ
         - イメージA
@@ -6,6 +8,8 @@
         - イメージB
             - タグA
             - タグB
+
+### コマンドtips
 
 イメージをローカルに持ってくる  
 `$docker pull REPOSITORY:TAG`
@@ -54,6 +58,21 @@ Dockerfileからイメージを構築する
 
 エントリポイントの上書き(例：bashを実行する)  
 `$docker run --entrypoint bash -it <IMAGE>`  
+
+エントリポイントの上書き(例：bashを実行する)  
+`$docker run --entrypoint bash -it <IMAGE>`  
+
+イメージにタグ付けする  
+`$docker tag <IMAGENAMEorID>:<TAG> <NEWNAME>:<TAG>`  
+
+DockerHubアカウントにログインする  
+`$docker login`  
+
+DockerHubにイメージをアップロードする  
+`$docker push <IMAGENAME:TAG>`  
+  
+
+### Dockerfiletips
 
 Dockerfileの主な命令
 ```
