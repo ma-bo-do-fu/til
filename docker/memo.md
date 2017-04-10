@@ -27,7 +27,7 @@
 `$docker ps -all`
 
 イメージからコンテナのターミナルに接続  
-`$docker run -it ubuntu:latest bash`
+`$docker run --interactive --tty ubuntu:latest bash`
 
 ターミナルに接続中にコンテナを停止せずに抜ける  
 `ctrl+p+q`
@@ -71,6 +71,50 @@ DockerHubアカウントにログインする
 DockerHubにイメージをアップロードする  
 `$docker push <IMAGENAME:TAG>`  
   
+コンテナにボリュームをマウントする  
+`$docker run --detach --volume <PathToVolume> <IMAGENAME>` 
+
+コンテナにホストマシンのディレクトリをマウントする  
+`$docker run -v <HostDirectory>:<ContainerDirectory> <IMAGENAME>` 
+
+コンテナの情報を確認する  
+`$docker inspect --format=='{{.KEY1.KEY2}}' <CONTAINERID>`  
+
+ボリューム一覧を表示する  
+`$docker volume ls`  
+
+ボリュームを削除する  
+`$docker volume rm <VOLUMENAME>`  
+
+ポートを割り当ててコンテナを実行  
+`$docker run -p <HostPort>:<ContainerPort> ubuntu bash`  
+
+コンテナの名前を指定して実行  
+`$docker run --name mynginx nginx`  
+
+データボリュームを利用する  
+`$docker run -it --volumes-from <DATACONTAINER> <IMAGENAME:TAG>`  
+
+複数のデータボリュームを利用する  
+```
+$docker run -it --volumes-from <DATACONTAINER1> \
+ --volumes-from <DATACONTAINER2> <IMAGENAME:TAG>
+ ```
+
+ログデータのバックアップをおこなう 
+``` 
+$docker run --volumes-from <DATACONTAINER> -v <Path/To/Host>:<Path/To/Container> <IMAGENAME:TAG> \
+ tar cvf <Path/To/Host(Logfile.tar)> <Path/To/Container(LogfileDirectory)>
+```
+ポートの割当を確認する  
+`$docker port <CONTAINERID>`  
+
+コンテナ間を連携する  
+`$docker run -d -it --name <CONTAINER1> --link <CONTAINER2>:<ALIAS> <IMAGE> bash`  
+
+### DataVolumeとDataVolumeContainer
+Data Volume とは「複数のコンテナ間で永続的なデータや共有データを扱うために Union File System を無視する特別なディレクトリ」のこと  
+複数のコンテナ間で共有したい永続的なデータや非永続的なコンテナから参照したい永続的なデータは Data Volume Container と呼ばれるコンテナを作成して、そのコンテナからデータをマウントする  
 
 ### Dockerfiletips
 
@@ -85,6 +129,8 @@ COPY(特定の送信元から、特定の送信先コンテナ・ファイルシ
 WORKDIR(指定されたディレクトリで命令を実行する)
 ENV(環境変数を設定する)
 ADD(ファイルやディレクトリをソースからコピーして作る)
+VOLUME(<PATH/TO/CONTAINER>パスを指定してボリュームをマウントする)
+EXPOSE(<CONTAINERPORT> <HOSTPORT>公開するポートを指定する)
 ```
 
 Dockerfileベストプラクティス
