@@ -14,5 +14,5 @@ chkconfig
 - CentOSでのipconfig  
 `$ip addr show`
 
-- bash_profileの再読込
+- bash_profileの再読込  
 ` source .bash_profile`
