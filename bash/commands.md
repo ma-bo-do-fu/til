@@ -12,4 +12,7 @@ http://qiita.com/odacoh/items/b94be0deecaaa27b0263
 chkconfig
 
 - CentOSでのipconfig  
-`ip addr show`
+`$ip addr show`
+
+- bash_profileの再読込
+` source .bash_profile`
