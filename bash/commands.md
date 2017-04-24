@@ -15,4 +15,10 @@ chkconfig
 `$ip addr show`
 
 - bash_profileの再読込  
-` source .bash_profile`
+`$source .bash_profile`
+
+- sshの接続確認  
+`$ssh -Vt <IPAddress/HostName>`  
+
+- コマンドの履歴を表示する  
+`$history`  
