@@ -20,3 +20,4 @@ Host github.com
   IdentityFile ~/.ssh/SECRET_KEY_PATH
   User git
 ```
+clone時に見ているURLとHostが異なっていると`Permission denied`になるので注意する
