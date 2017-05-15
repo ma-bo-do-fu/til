@@ -18,7 +18,7 @@ chkconfig
 `$source .bash_profile`
 
 - sshの接続確認  
-`$ssh -Vt <IPAddress/HostName>`  
+`$ssh -vT <IPAddress/HostName>`  
 
 - コマンドの履歴を表示する  
 `$history`  
