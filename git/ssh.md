@@ -1,10 +1,10 @@
 # gitのリモートディレクトリにSSH鍵を登録する
 
-`$cd ~/.ssh`
-- 鍵を生成する
-`$ssh-keygen -t rsa`
-- 鍵を登録する
-`$pbcopy < ~/.ssh/YOUR_PUBLICKEY_PATH`
+`$cd ~/.ssh`  
+- 鍵を生成する  
+`$ssh-keygen -t rsa`  
+- 鍵を登録する  
+`$pbcopy < ~/.ssh/YOUR_PUBLICKEY_PATH`  
 
 - ssh/configを設定する
 ```
