@@ -6,5 +6,5 @@
 `$git push --delete origin <branch_name>`  
 
 
-- リモートブランチをローカルにチェックアウトする  
-`$ggit checkout -b <local_branch> origin/<remote_branch>`  
+- リモートブランチをローカルにチェックアウトする  
+`$git checkout -b <local_branch> origin/<remote_branch>`  
