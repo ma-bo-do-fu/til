@@ -22,3 +22,28 @@ chkconfig
 
 - コマンドの履歴を表示する  
 `$history`  
+
+- シェルスクリプトのファイルを作成し実行する  
+`$touch hoge.sh`  
+`$chmod +x hoge.sh`  
+`$./hoge.sh`  
+
+```bash
+#!/bin/sh
+#変数
+hoge=$((RANDOM % 2))
+#if文
+if [ $hoge = 0 ] ; then
+  echo "hoge"
+else
+  echo "huga"
+fi
+#直前のコマンドのステータス
+echo $?
+#ループ
+for i in `seq 0 9`
+do
+  #コマンド実行
+  ls
+done
+```
