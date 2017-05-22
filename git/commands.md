@@ -8,3 +8,6 @@
 
 - リモートブランチをローカルにチェックアウトする  
 `$git checkout -b <local_branch> origin/<remote_branch>`  
+
+- リモートブランチのコミットを2つ分削除する  
+`$git push -f origin HEAD^^:master`  
