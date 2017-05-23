@@ -143,3 +143,5 @@ Dockerfileベストプラクティス
     - 命令の順番を考慮する
     - 最初に変更の少ないファイルの追加をおこない、大きな変更を伴うものは最後に追加
 
+alphine linuxのターミナルに入る  
+`$docker exec -it <CONTAINERID> /bin/sh`  
