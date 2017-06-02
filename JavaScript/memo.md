@@ -85,3 +85,9 @@ if(undefined){
 //false
 
 ```
+
+### tips
+- オブジェクトの配列の中から要素を探す
+```javascript
+ObjectsArray.find(element => element.keyValue === 'hoge')
+```
