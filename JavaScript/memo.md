@@ -91,3 +91,9 @@ if(undefined){
 ```javascript
 ObjectsArray.find(element => element.keyValue === 'hoge')
 ```
+
+- プロパティが存在するかどうか判定する
+```javascript
+//プロパティが文字列で、0文字のときもtrueになる
+if('hoge' in fuga){}
+```
